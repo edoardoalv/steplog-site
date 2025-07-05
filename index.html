@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>StepLog - Gravador de Etapas</title>
+    <style>
+        :root {
+            --azul-claro: #003cff;
+            --azul-escuro: #030441;
+            --cinza-claro: #f3f4f6;
+            --cinza-escuro: #374151;
+            --texto-escuro: #111827;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            background-color: #ffffff;
+            color: var(--texto-escuro);
+            font-family: 'Segoe UI', sans-serif;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(to right, var(--azul-claro) 5%, var(--azul-escuro));
+            padding: 2.5rem 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #ffffff;
+            margin: 0;
+        }
+
+        header p {
+            font-size: 1.25rem;
+            color: #ffffff;
+            margin-top: 0.5rem;
+        }
+
+        nav {
+            background-color: #ffffff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            padding: 1rem 0;
+            font-weight: 600;
+        }
+
+        nav a {
+            color: var(--cinza-escuro);
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            color: var(--azul-escuro)
+        }
+
+        section {
+            padding: 3rem 1.5rem;
+            max-width: 1024px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        section.bg-gray {
+            background-color: var(--cinza-claro);
+        }
+
+        h2 {
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: var(--texto-escuro);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        @media (min-width: 768px) {
+            .grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .feature h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature p {
+            color: var(--cinza-escuro);
+        }
+
+        button {
+            background-color: var(--azul-claro);
+            color: #ffffff;
+            font-weight: 700;
+            padding: 0.75rem 2rem;
+            border-radius: 9999px;
+            transition: background-color 0.3s;
+            border: none;
+            cursor: pointer;
+            margin: auto;
+            display: block;
+        }
+
+        button:hover {
+            background-color: var(--azul-escuro);
+        }
+
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            background-color: #ffffff;
+            font-size: 0.875rem;
+            color: #6b7280;
+        }
+
+        .faq {
+            margin-top: 2rem;
+        }
+
+        .faq-item {
+            margin-bottom: 1rem;
+            cursor: pointer;
+            background: #fff;
+            border: 1px solid var(--cinza-escuro);
+            padding: 1rem;
+            border-radius: 8px;
+        }
+
+        .faq-item h4 {
+            margin: 0;
+        }
+
+        .faq-answer {
+            display: none;
+            margin-top: 0.5rem;
+            color: var(--cinza-escuro);
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>StepLog - Gravador de Etapas</h1>
+        <p>Capture e compartilhe seus passos com facilidade</p>
+    </header>
+
+    <nav>
+        <a href="#sobre">Sobre</a>
+        <a href="#recursos">Recursos</a>
+        <a href="#faq">FAQ</a>
+        <a href="#download">Download</a>
+        <a href="#contato">Contato</a>
+    </nav>
+
+    <section id="sobre">
+        <h2>O que é o StepLog?</h2>
+        <img src="LOGO-AZUL-STEPLOG.png" alt="" width="500px">
+        <p>StepLog é um aplicativo eficiente para registrar ações na tela do computador, capturando cliques, teclas e
+            imagens com marcações automáticas. Ideal para suporte técnico, treinamento, documentação de sistemas e mais.
+        </p>
+
+    </section>
+
+    <section id="recursos" class="bg-gray">
+        <h2>Funcionalidades</h2>
+        <div class="grid">
+            <div class="feature">
+                <h3>🎯 Registro Detalhado</h3>
+                <p>Captura automática de cliques e teclas com contexto da janela ativa.</p>
+            </div>
+            <div class="feature">
+                <h3>🖼️ Screenshots com Destaques</h3>
+                <p>Imagens geradas automaticamente com marcação dos elementos clicados.</p>
+            </div>
+            <div class="feature">
+                <h3>📄 Relatório em PDF</h3>
+                <p>Exportação dos passos em documento PDF visual e profissional.</p>
+            </div>
+            <div class="feature">
+                <h3>⏯️ Pausa e Retomada</h3>
+                <p>Controle total da gravação com funções de pausar, retomar e salvar.</p>
+            </div>
+            <div class="feature">
+                <h3>💾 Salvar como</h3>
+                <p>Permite salvar os registros em diferentes formatos: PDF, TXT ou HTML.</p>
+            </div>
+            <div class="feature">
+                <h3>🌙 Modo Escuro Automático</h3>
+                <p>Adaptação automática ao tema do sistema do usuário.</p>
+            </div>
+            <div class="feature">
+                <h3>🟢 Destaque Visual Automático</h3>
+                <p>Área clicada é destacada com borda verde, facilitando a visualização da ação.</p>
+            </div>
+            <div class="feature">
+                <h3>🧠 Reconhecimento de Controle</h3>
+                <p>Identificação do controle da interface que foi clicado ou utilizado.</p>
+            </div>
+            <div class="feature">
+                <h3>🪟 Nome da Janela Ativa</h3>
+                <p>Registra o nome da janela ativa e o título do aplicativo no momento da ação.</p>
+            </div>
+            <div class="feature">
+                <h3>📊 Contexto Completo</h3>
+                <p>Registros com detalhes de posição do mouse, atalhos usados e janela focada.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq">
+        <h2>Dúvidas Frequentes</h2>
+        <div class="faq">
+            <div class="faq-item">
+                <h4>O StepLog é gratuito?</h4>
+                <div class="faq-answer">Sim! O StepLog oferece uma versão gratuita com funcionalidades principais. Há
+                    também uma versão Pro com recursos avançados.</div>
+            </div>
+            <div class="faq-item">
+                <h4>Como o StepLog protege meus dados?</h4>
+                <div class="faq-answer">Nenhuma informação sensível (como senhas) é capturada. As gravações são locais,
+                    mantendo a privacidade do usuário.</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="download">
+        <h2>Comece agora mesmo</h2>
+        <p>Faça o download gratuito do StepLog e registre seus fluxos de trabalho de forma clara e prática.</p>
+
+        <br>
+        <button onclick="baixarApp()">Baixar StepLog</button>
+    </section>
+
+    <section id="contato" class="bg-gray">
+        <h2>Fale com a gente</h2>
+        <p style="text-align: center; display: block;">Dúvidas, sugestões ou suporte? Envie um e-mail para <a
+                href="mailto:suporte@steplog.app"
+                style="color:var(--azul-claro); text-decoration:underline;">suporte@steplog.app</a></p>
+    </section>
+
+    <div style="margin: 2rem 0; text-align: center;">
+        <button onclick="abrirModal()">💚 Doe via Pix</button>
+    </div>
+
+    <footer>
+        &copy; 2025 StepLog Gravador de Etapas. Todos os direitos reservados.
+        <br>
+        Luiz Alves
+    </footer>
+
+    <div id="modalPix"
+        style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background-color:rgba(0,0,0,0.5); display:flex; justify-content:center; align-items:center; z-index:100;">
+        <div
+            style="background:white; padding:2rem; border-radius:1rem; text-align:center; max-width:20%; position:relative;">
+            <h2>Ajude o StepLog a crescer! 💚 </h2>
+            <p>Este software é gratuito. Se você gostou e quiser apoiar o projeto, considere fazer uma doação
+                voluntária. Toda contribuição ajuda a manter e melhorar o sistema!</p>
+            <p>Escaneie o QR Code abaixo para doar via Pix ou se preferir pague pelo mercadopago com a opção abaixo
+                pagar:</p>
+            <img src="qrcodepix.png" alt="QR Code Pix" style="max-width:300px; width:100%; margin:1rem 0;" />
+            <br>
+            <script src="https://www.mercadopago.com.br/integrations/v1/web-payment-checkout.js"
+                data-preference-id="247458802-67925722-9265-4441-bceb-654d65bdb0d0" data-source="button">
+                </script>
+            <br>
+            <button onclick="fecharModal()">Fechar</button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const elements = document.querySelectorAll("section");
+            elements.forEach((el, i) => {
+                el.style.opacity = 0;
+                el.style.transform = "translateY(40px)";
+                setTimeout(() => {
+                    el.style.transition = "all 0.8s ease-out";
+                    el.style.opacity = 1;
+                    el.style.transform = "translateY(0)";
+                }, i * 100);
+            });
+
+            const faqs = document.querySelectorAll(".faq-item");
+            faqs.forEach((item) => {
+                item.addEventListener("click", () => {
+                    const answer = item.querySelector(".faq-answer");
+                    answer.style.display = answer.style.display === "block" ? "none" : "block";
+                });
+            });
+        });
+
+        function baixarApp() {
+            window.location.href = "instalador_steplog.exe";
+        }
+
+        function abrirModal() {
+            document.getElementById('modalPix').style.display = 'flex';
+        }
+
+        function fecharModal() {
+            document.getElementById('modalPix').style.display = 'none';
+        }
+    </script>
+</body>
+
+</html>
